@@ -4,7 +4,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "./assets/vite.svg";
 import "./App.css";
 import { GoHome } from "react-icons/go";
-import { MdOutlineGroups, MdOutlinePostAdd } from "react-icons/md";
+import { MdHelpOutline, MdOutlineAssignment, MdOutlineDashboard, MdOutlineExplore, MdOutlineForum, MdOutlineGrade, MdOutlineGroups, MdOutlinePostAdd, MdOutlineQuiz, MdOutlineSchool, MdOutlineSettings, MdOutlineWorkspacePremium } from "react-icons/md";
 import { HiOutlineMail } from "react-icons/hi";
 import { LiaUserFriendsSolid } from "react-icons/lia";
 import { AiOutlineNotification } from "react-icons/ai";
@@ -12,6 +12,9 @@ import { LuNotebookPen } from "react-icons/lu";
 import { FaPowerOff, FaRegCalendarCheck } from "react-icons/fa6";
 import { SiGitbook } from "react-icons/si";
 import { TbReport } from "react-icons/tb";
+import { PiBookOpenText } from "react-icons/pi";
+import { FaRegCalendarAlt } from "react-icons/fa";
+import { FiMail } from "react-icons/fi";
 
 const App = () => {
   // const [count, setCount] = useState(0);
@@ -126,15 +129,15 @@ const App = () => {
       <section id="spacer"></section>
     </> */
 
-    <>
+    /*     <>
       <nav className="flex flex-col items-start gap-5 px-4 py-2 bg-white/10 shadow-md backdrop-blur-md py-8">
         <h2>E-Learning</h2>
 
-        <div class="stroke">`</div>
+        <div className="stroke">`</div>
 
         <section
           id="nav-profile"
-          class="flex items-center justify-start gap-4 w-60"
+          className="flex items-center justify-start gap-4 w-60"
         >
           <img
             src="./src/assets/kwai.svg"
@@ -147,9 +150,9 @@ const App = () => {
           </div>
         </section>
 
-        <div class="stroke">`</div>
+        <div className="stroke">`</div>
 
-        <menu className="flex flex-col gap-2 items-start justify-start text-sm text-zinc-500 capitalize">
+        <menu className="flex flex-col gap-2 items-start justify-start w-full text-sm text-zinc-500 capitalize">
           <h3 className="text-xs font-thin text-white">Menu</h3>
           <li className="flex items-center gap-2">
             <GoHome />
@@ -176,7 +179,7 @@ const App = () => {
             <a href="#">groups</a>
           </li>
 
-          <div class="stroke">`</div>
+          <div className="stroke">`</div>
 
           <li className="flex items-center gap-2">
             <SiGitbook />
@@ -195,7 +198,7 @@ const App = () => {
             <a href="#">schedule</a>
           </li>
 
-          <div class="stroke">`</div>
+          <div className="stroke">`</div>
 
           <li className="flex items-center gap-2">
             <FaPowerOff />
@@ -203,6 +206,79 @@ const App = () => {
           </li>
         </menu>
       </nav>
+    </> */
+
+    <>
+      <nav className="sidebar">
+        <div className="logo">
+          <MdOutlineSchool />
+          <span className="label">AOI - LMS</span>
+        </div>
+
+        <div className="nav">
+          <a href="#" className="active">
+            <MdOutlineDashboard />
+            <span className="label">Dashboard</span>
+          </a>
+          <a href="#">
+            <PiBookOpenText />
+            <span className="label">My Courses</span>
+          </a>
+          <a href="#" className="desktop-only">
+            <MdOutlineExplore />
+            <span className="label">Catalog</span>
+          </a>
+          <a href="#">
+            <MdOutlineAssignment />
+            <span className="label">Assignments</span>
+          </a>
+          <a href="#" className="desktop-only">
+            <MdOutlineQuiz />
+            <span className="label">Quizzes</span>
+          </a>
+          <a href="#" className="desktop-only">
+            <MdOutlineGrade />
+            <span className="label">Grades</span>
+          </a>
+          <a href="#">
+            <FaRegCalendarAlt />
+            <span className="label">Calendar</span>
+          </a>
+
+          <hr />
+          <div className="section-title">Community</div>
+          <a href="#">
+            <MdOutlineForum />
+            <span className="label">Discussions</span>
+          </a>
+          <a href="#" className="desktop-only">
+            <FiMail />
+            <span className="label">Messages</span>
+          </a>
+          <a href="#" className="desktop-only">
+            <MdOutlineWorkspacePremium />
+            <span className="label">Certificates</span>
+          </a>
+
+          <hr />
+          <a href="#" className="desktop-only">
+            <MdOutlineSettings />
+            <span className="label">Settings</span>
+          </a>
+          <a href="#" className="desktop-only">
+            <MdHelpOutline />
+            <span className="label">Help</span>
+          </a>
+        </div>
+      </nav>
+
+      <main>
+        <h1 className="text-start">Dashboard</h1>
+        <p className="mt-4 text-sm text-zinc-500 text-start">
+          Hover over the sidebar on the left to expand it. Move the mouse away
+          and it collapses back to icons.
+        </p>
+      </main>
     </>
   );
 };

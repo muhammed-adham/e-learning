@@ -1,5 +1,42 @@
 @import "tailwindcss";
+
 :root {
+  color-scheme: light;
+
+  --bg: #ebebeb;
+  --primary: #004e98;
+  --accent: #ff9000;
+  --overlay: rgba(14, 18, 17, 0.48);
+  --surface: #fff;
+  --border: #e2e2dd;
+  --border-strong: #8a918e;
+  --hover: #f2f2f2;
+  --active: #e8f0fe;
+  --active-text: #1a73e8;
+
+  --text: #1a1e1d;
+  --text-muted: #545b58;
+  --text-subtle: #6b7370;
+  --text-disabled: #a9aeac;
+  --text-inverse: #fff;
+
+  /* Typography */
+  --font-sans:
+    "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Plus Jakarta Sans", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* --primary: var(--blue-600);
+  --primary-hover: var(--blue-500);
+  --on-primary: var(--gray-0);
+  --danger: var(--red-500);
+  --success: var(--green-500);
+  --focus-ring: var(--blue-400); */
+
+  --sidebar-collapsed: 72px;
+  --sidebar-expanded: 240px;
+}
+
+/* :root {
   --text: #6b6375;
   --text-h: #08060d;
   --bg: #fff;
@@ -25,15 +62,16 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 
   @media (max-width: 1024px) {
     font-size: 16px;
   }
-}
+} */
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #9ca3af;
+    /* --text: #9ca3af;
     --text-h: #f3f4f6;
     --bg: #16171d;
     --border: #2e303a;
@@ -43,7 +81,7 @@
     --accent-border: rgba(192, 132, 252, 0.5);
     --social-bg: rgba(47, 48, 58, 0.5);
     --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px; */
   }
 
   #social .button-icon {
@@ -51,8 +89,15 @@
   }
 }
 
+html {
+  font-size: 100%; /* 1rem = 16px (Default browser size) */
+  font-family: var(--font-sans);
+}
+
 body {
   margin: 0;
+  font-size: 1rem;
+  background: var(--bg);
 }
 
 #root {
@@ -70,12 +115,13 @@ body {
 h1,
 h2 {
   font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+  font-weight: 700;
+  color: var(--primary);
 }
 
 h1 {
   font-size: 56px;
+  font-family: var(--font-mono);
   letter-spacing: -1.68px;
   margin: 32px 0;
   @media (max-width: 1024px) {
@@ -94,19 +140,4 @@ h2 {
 }
 p {
   margin: 0;
-}
-
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
-}
-
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
 }
