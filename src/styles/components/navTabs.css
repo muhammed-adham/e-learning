@@ -1,0 +1,7 @@
+.nav-tabs {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-transform: capitalize;
+  padding-inline: 1rem;
+}
