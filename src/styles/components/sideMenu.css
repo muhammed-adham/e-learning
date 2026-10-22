@@ -110,42 +110,4 @@
 
 
 
-  /* ---------- MOBILE: hide sidebar, use a bottom bar instead ---------- */
-  @media (max-width: 600px) {
-    .sidebar {
-      top: auto;
-      bottom: 0;
-      width: 100% !important;
-      height: 64px;
-      border-right: none;
-      border-top: 1px solid var(--border);
-      box-shadow: none !important;
-    }
-    .logo,
-    .section-title,
-    hr,
-    .nav .desktop-only {
-      display: none;
-    }
-    .nav {
-      display: flex;
-      justify-content: space-around;
-      height: 100%;
-    }
-    .nav a {
-      flex-direction: column;
-      justify-content: center;
-      gap: 2px;
-      height: 100%;
-      margin: 0;
-      padding: 0 4px;
-    }
-    .label {
-      opacity: 1;
-      font-size: 11px;
-    }
-    main {
-      margin-left: 0;
-      padding: 16px 16px 80px;
-    }
-  }
+  /* Mobile bottom bar: see styles/responsive.css */

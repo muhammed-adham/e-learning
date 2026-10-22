@@ -1,0 +1,83 @@
+.card-container-enrolled {
+  background: var(--surface);
+  height: 16rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem;
+  gap: 0.8rem;
+  p {
+    text-transform: capitalize;
+  }
+  .card-course-title-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    text-align: start;
+    border-inline-end: 0.5px solid rgba(0, 0, 0, 0.1);
+    padding-inline-end: 2rem;
+    .card-course-title {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      p {
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 20%;
+      }
+      i {
+        font-size: x-small;
+        font-weight: 500;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 20%;
+      }
+    }
+  }
+  .card-nxtCourse-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    text-align: start;
+    .card-nxtCourse-title {
+      p {
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 20%;
+      }
+    }
+    .card-chapter-container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: space-between;
+      .card-course-progress-container {
+        display: flex;
+        flex-direction: column;
+        text-align: end;
+        span {
+          font-size: 0.6rem;
+        }
+        .card-course-bar {
+          display: flex;
+          align-items: center;
+          background: var(--bg);
+          height: 4px;
+          width: 100%;
+          min-width: 6rem;
+          .bar-percentage {
+            background: var(--primary);
+            height: 4px;
+          }
+        }
+      }
+    }
+  }
+}

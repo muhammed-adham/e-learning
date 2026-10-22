@@ -4,7 +4,7 @@ import '../styles/components/btnPrimary.css'
 
 const BtnPrimary = ({buttonText, buttonLink}) => {
   return (
-    <Link to={buttonLink} className="btn-primary">{buttonText}</Link>
+    <Link to={buttonLink} className="btn-primary"><h6>{buttonText}</h6></Link>
   )
 }
 

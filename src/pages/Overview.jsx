@@ -1,69 +1,82 @@
-import React from "react";
+import React, { useState } from "react";
+import TimeframeDropdown from "../components/TimeframeDropdown";
 import "../styles/pages/overview.css";
 import BtnPrimary from "../components/BtnPrimary";
 import {
   MdOutlineAccessTime,
   MdOutlineAssignmentTurnedIn,
-  MdOutlineMenuBook,
+  MdOutlineLibraryBooks,
   MdOutlineSchool,
 } from "react-icons/md";
-import { Link } from "react-router";
+import CardOverview from "../components/CardOverview";
+import CardCourses from "../components/CardCourses";
 
-// Icons are static UI, keyed by stat className, so the database only
-// needs to supply { className, label, value } per user.
 const STAT_ICONS = {
   "learning-hours": MdOutlineAccessTime,
   "concepts-completed": MdOutlineSchool,
-  "lessons-completed": MdOutlineMenuBook,
+  "lessons-completed": MdOutlineLibraryBooks,
   "projects-completed": MdOutlineAssignmentTurnedIn,
 };
 
-const Overview = () => {
-  const stats = [
-    {
-      id: 1,
-      className: "learning-hours",
-      label: "Learning Hours",
-      value: 128,
-    },
-    {
-      id: 2,
-      className: "concepts-completed",
-      label: "Concepts Completed",
-      value: 46,
-    },
-    {
-      id: 3,
-      className: "lessons-completed",
-      label: "Lessons Completed",
-      value: 82,
-      unit: "",
-    },
-    {
-      id: 4,
-      className: "projects-completed",
-      label: "Projects Completed",
-      value: 7,
-    },
-  ];
+const stats = [
+  {
+    id: 1,
+    className: "learning-hours",
+    label: "Learning Hours",
+    value: 128,
+  },
+  {
+    id: 2,
+    className: "concepts-completed",
+    label: "Concepts Completed",
+    value: 46,
+  },
+  {
+    id: 3,
+    className: "lessons-completed",
+    label: "Lessons Completed",
+    value: 82,
+    unit: "",
+  },
+  {
+    id: 4,
+    className: "projects-completed",
+    label: "Projects Completed",
+    value: 7,
+  },
+];
 
+const USER_ACTIVE_STAT = "active";
+const Overview = () => {
+  const [timeframe, setTimeframe] = useState(30);
   return (
     <>
-      {/* -----------Overview Page----------- */}
+      {/* -----------Overview Section----------- */}
       <div className="overview-page container-inline">
-        {/* -----------Overview Board----------- */}
-        <div className="overview-container">
-          <div className="overview-title">Let’s get you started!</div>
-          <div className="overview-desc">
-            You haven’t started learning yet — let’s find the right course to
-            kick things off. Browse popular programs to begin.
+        {/* -----------Overview Board 2 State Mapping----------- */}
+        {USER_ACTIVE_STAT === "inactive" ? (
+          // -----------Empty Stat-----------
+          <div className="overview-container-empty">
+            <b className="overview-title">Let’s get you started!</b>
+            <p className="overview-desc">
+              You haven’t started learning yet — let’s find the right course to
+              kick things off. Browse popular programs to begin.
+            </p>
+            <div className="overview-btn">
+              <BtnPrimary buttonText={"browse catalog"} />
+            </div>
           </div>
-          <div className="overview-btn">
-            <BtnPrimary buttonText={"browse catalog"} />
-          </div>
-        </div>
-        {/* -----------Progress Stats----------- */}
+        ) : (
+          // -----------Enrolled Stat-----------
+          <CardOverview />
+        )}
+
+        {/* -----------Progress Section----------- */}
         <div className="progress-container">
+          <div className="dropdown-timeframe">
+            <b>Your Progress</b>
+            <TimeframeDropdown value={timeframe} onChange={setTimeframe} />
+          </div>
           <div className="progress-cards grid grid-cols-2 gap-2">
             {stats.map((stat) => {
               const Icon = STAT_ICONS[stat.className];
@@ -83,12 +96,18 @@ const Overview = () => {
           <div className="help-container text-start">
             <div className="help-icon"></div>
             <div className="help-content">
-              <div className="title">Account Help</div>
+              <h6 className="title">Account Help</h6>
               <div className="sub-title">Need account help?</div>
               <div className="btn-link">Visit Help Center</div>
             </div>
           </div>
         </div>
+      </div>
+
+      {/* -----------Recommended Section----------- */}
+      <h6 className="section-header">Recommended Courses</h6>
+      <div className="recommended-cards-container container-inline grid grid-cols-4">
+        <CardCourses />
       </div>
     </>
   );

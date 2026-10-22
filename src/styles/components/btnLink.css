@@ -1,0 +1,9 @@
+.btn-link {
+  position: relative;
+  text-transform: capitalize;
+  font-size: 0.7rem;
+  svg {
+    display: inline-block;
+    font-size: 0.8rem;
+  }
+}

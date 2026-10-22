@@ -1,0 +1,89 @@
+.timeframe-dropdown {
+  position: relative;
+  width: 50%;
+  text-align: start;
+
+  .timeframe-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8rem;
+    padding: 0.5rem 0.8rem;
+    font: inherit;
+    font-size: 0.9rem;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border-strong);
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s;
+
+    &:hover {
+      border-color: var(--primary);
+    }
+    &:focus-visible {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(0, 78, 152, 0.2);
+    }
+  }
+
+  .timeframe-arrow {
+    flex-shrink: 0;
+    font-size: 1.4rem;
+    padding: 0.1rem; /* breathing room around the icon */
+    color: var(--text-muted);
+    transition: transform 0.25s ease;
+  }
+  &.is-open .timeframe-arrow {
+    transform: rotate(180deg);
+  }
+  &.is-open .timeframe-trigger {
+    border-color: var(--primary);
+  }
+
+  .timeframe-menu {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    z-index: 20;
+    margin: 0;
+    padding: 0.35rem;
+    list-style: none;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    animation: timeframe-in 0.15s ease;
+
+    &[hidden] {
+      display: none;
+    }
+  }
+
+  .timeframe-option {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+
+    &.is-active {
+      background: var(--hover);
+    }
+    &.is-selected {
+      color: var(--active-text);
+      background: var(--active);
+      font-weight: 600;
+    }
+  }
+}
+
+@keyframes timeframe-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

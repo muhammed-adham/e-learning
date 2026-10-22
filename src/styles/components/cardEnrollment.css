@@ -1,0 +1,55 @@
+.card-enrollment {
+  background: var(--surface);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  text-align: start;
+  gap: 1.6rem;
+  width: 100%;
+  .enrollment-course-img {
+    flex-shrink: 0;
+    height: 6rem;
+    aspect-ratio: 1/1;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .enrollment-course-container {
+    width: 15%;
+    min-width: 7rem;
+    display: flex;
+    flex-direction: column;
+    .enrollment-course-title {
+      margin: 0;
+    }
+    p {
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: .2rem;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: .75rem;
+      svg{
+        font-size: 1rem;
+      }
+    }
+  }
+  .enrollment-course-desc {
+    width: 30%;
+  }
+  .enrollment-course-progress-bar {
+    width: 5%;
+  }
+  .enrollment-course-badge {
+    width: 15%;
+  }
+  .enrollment-course-cta {
+    width: 20%;
+  }
+  .enrollment-course-opt {
+    width: 2rem;
+  }
+}

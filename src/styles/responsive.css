@@ -1,0 +1,117 @@
+/*
+ * All media queries live here. Imported last in main.jsx so these rules
+ * win over the base component styles at equal specificity.
+ * Breakpoints: 1024 (tablet) · 768 (small tablet) · 600 (mobile) · 480 (small mobile)
+ */
+
+/* ---------- Color scheme ---------- */
+@media (prefers-color-scheme: dark) {
+  #social .button-icon {
+    filter: invert(1) brightness(2);
+  }
+}
+
+/* ---------- ≤ 1024px ---------- */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+  h2 {
+    font-size: 20px;
+  }
+}
+
+/* ---------- ≤ 768px ---------- */
+@media (max-width: 768px) {
+  /* Slide banner */
+  .banner-content {
+    padding: 0 24px;
+  }
+  .banner-swiper .swiper-button-next,
+  .banner-swiper .swiper-button-prev {
+    display: none;
+  }
+  .banner-slide{
+    padding-inline-start: 0;
+    padding-inline: auto;
+  }
+
+  /* Overview: stack the intro card above the stats */
+  .overview-page {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5rem;
+  }
+  .overview-page .overview-container {
+    height: auto;
+    padding-block: 2rem;
+  }
+  .overview-page .progress-container {
+    width: 100%;
+  }
+}
+
+/* ---------- ≤ 600px ---------- */
+@media (max-width: 600px) {
+  /* Sidebar becomes a bottom bar */
+  .sidebar {
+    top: auto;
+    bottom: 0;
+    width: 100% !important;
+    height: 64px;
+    border-right: none;
+    border-top: 1px solid var(--border);
+    box-shadow: none !important;
+  }
+  .logo,
+  .section-title,
+  hr,
+  .nav .desktop-only {
+    display: none;
+  }
+  .nav {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+  }
+  .nav a {
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+    height: 100%;
+    margin: 0;
+    padding: 0 4px;
+  }
+  .label {
+    opacity: 1;
+    font-size: 11px;
+  }
+  main {
+    margin-left: 0;
+    padding: 16px 16px 80px;
+  }
+
+  /* Leave room for the bottom bar */
+  #root {
+    padding-bottom: 64px;
+  }
+
+  .container-inline {
+    padding: 1.5rem 0.75rem;
+  }
+}
+
+/* ---------- ≤ 480px ---------- */
+@media (max-width: 480px) {
+  .overview-page .overview-container {
+    padding-inline: 1rem;
+  }
+  .overview-page .progress-cards {
+    grid-template-columns: 1fr;
+  }
+  .overview-page .progress-item {
+    height: auto;
+    min-height: 5rem;
+  }
+}
