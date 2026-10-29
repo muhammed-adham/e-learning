@@ -9,7 +9,6 @@ import {
   MdOutlineSchool,
 } from "react-icons/md";
 import CardOverview from "../components/CardOverview";
-import CardCourses from "../components/CardCourses";
 
 const STAT_ICONS = {
   "learning-hours": MdOutlineAccessTime,
@@ -45,6 +44,8 @@ const stats = [
     value: 7,
   },
 ];
+
+
 
 const USER_ACTIVE_STAT = "active";
 const Overview = () => {
@@ -104,11 +105,7 @@ const Overview = () => {
         </div>
       </div>
 
-      {/* -----------Recommended Section----------- */}
-      <h6 className="section-header">Recommended Courses</h6>
-      <div className="recommended-cards-container container-inline grid grid-cols-4">
-        <CardCourses />
-      </div>
+
     </>
   );
 };

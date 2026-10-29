@@ -1,0 +1,22 @@
+.btn-secondary {
+  text-transform: capitalize;
+  display: inline-block;
+  padding-inline:0.8rem;
+  border:1px solid var(--primary);
+  text-decoration: none;
+  color: var(--primary);
+  width: fit-content;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+  h6 {
+    font-size: 0.75rem !important;
+    font-weight: 500;
+  }
+}
+
+.btn-secondary:hover {
+  background: var(--primary);
+  color: var(--text-inverse);
+  transform: translateY(-2px);
+}

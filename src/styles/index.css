@@ -6,6 +6,7 @@
   --bg: #ebebeb;
   --primary: #004e98;
   --accent: #ff9000;
+  --tertairy: #4338ca;
   --overlay: rgba(14, 18, 17, 0.48);
   --surface: #fff;
   --border: #e2e2dd;
@@ -19,6 +20,10 @@
   --text-subtle: #6b7370;
   --text-disabled: #a9aeac;
   --text-inverse: #fff;
+
+  --danger: #ef4444;
+  --info: #3b82f6;
+  --warning: #FF6B00;
 
   /* Typography */
   --font-sans:
@@ -130,20 +135,21 @@ h6 {
   padding-block: 0.4rem;
   display: inline-block;
 }
-p{
-  font-size: .85rem;
+p {
+  font-size: 0.85rem;
   line-height: 1.2rem;
 }
 .container-inline {
   padding: 2rem 1rem;
 }
-.section-header{
+.section-header {
   text-transform: uppercase;
   font-weight: 500;
   position: relative;
   margin-top: 1.6rem;
+  width: 100%;
 }
-.section-header::after{
+.section-header::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -152,7 +158,7 @@ p{
   height: 1px;
   background: #000;
 }
-.section-header::before{
+.section-header::before {
   content: "";
   position: absolute;
   top: 50%;

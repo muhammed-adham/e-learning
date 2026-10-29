@@ -26,8 +26,8 @@ const CardOverview = () => {
             <h6>useState hook</h6>
           </div>
           <div className="card-chapter-container">
-            <div class="card-course-progress-container">
-              <div class="card-course-bar">
+            <div className="card-course-progress-container">
+              <div className="card-course-bar">
                 <div className="bar-percentage" style={{ width: "70%" }}></div>
               </div>
               <span className="progress-text">6/9 Lessons</span>
