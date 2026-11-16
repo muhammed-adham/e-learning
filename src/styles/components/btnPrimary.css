@@ -16,6 +16,6 @@
 }
 
 .btn-primary:hover {
-  background: #4338ca;
+  background: var(--tertairy);
   transform: translateY(-2px);
 }

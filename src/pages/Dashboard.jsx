@@ -4,6 +4,7 @@ import NavTabs from "../components/NavTabs";
 import { Outlet } from "react-router";
 import NotifacationCenter from "../components/NotifacationCenter";
 import CardCourses from "../components/CardCourses";
+import SlideBanner from "../components/SlideBanner";
 
 const Dashboard = () => {
   const user = {
@@ -204,6 +205,8 @@ const Dashboard = () => {
   ];
   return (
     <>
+      <SlideBanner />
+
       <div>
         <h5>Welcome back, {user.name}!</h5>
       </div>

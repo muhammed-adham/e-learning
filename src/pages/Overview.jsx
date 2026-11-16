@@ -9,6 +9,7 @@ import {
   MdOutlineSchool,
 } from "react-icons/md";
 import CardOverview from "../components/CardOverview";
+import BtnLink from "../components/BtnLink";
 
 const STAT_ICONS = {
   "learning-hours": MdOutlineAccessTime,
@@ -99,7 +100,7 @@ const Overview = () => {
             <div className="help-content">
               <h6 className="title">Account Help</h6>
               <div className="sub-title">Need account help?</div>
-              <div className="btn-link">Visit Help Center</div>
+              <BtnLink label={"Visit Help Center"}/>
             </div>
           </div>
         </div>

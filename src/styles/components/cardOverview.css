@@ -58,26 +58,6 @@
       flex-direction: column;
       align-items: flex-end;
       justify-content: space-between;
-      .card-course-progress-container {
-        display: flex;
-        flex-direction: column;
-        text-align: end;
-        span {
-          font-size: 0.6rem;
-        }
-        .card-course-bar {
-          display: flex;
-          align-items: center;
-          background: var(--bg);
-          height: 4px;
-          width: 100%;
-          min-width: 6rem;
-          .bar-percentage {
-            background: var(--primary);
-            height: 4px;
-          }
-        }
-      }
     }
   }
 }

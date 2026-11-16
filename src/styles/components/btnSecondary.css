@@ -1,7 +1,10 @@
 .btn-secondary {
   text-transform: capitalize;
   display: inline-block;
-  padding-inline:0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;  
+  padding:0.2rem 0.8rem;
   border:1px solid var(--primary);
   text-decoration: none;
   color: var(--primary);

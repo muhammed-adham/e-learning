@@ -10,11 +10,11 @@
   .sidebar {
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     height: 100vh;
     width: var(--sidebar-collapsed);
     background: var(--surface);
-    border-right: 1px solid var(--border);
+    border-left: 1px solid var(--border);
     overflow-x: hidden;
     overflow-y: auto;
     transition:
@@ -27,7 +27,7 @@
   .sidebar:hover,
   .sidebar:focus-within {
     width: var(--sidebar-expanded);
-    box-shadow: 4px 0 16px rgba(0, 0, 0, 0.08);
+    box-shadow: -4px 0 16px rgba(0, 0, 0, 0.08);
   }
 
   .logo {
@@ -100,7 +100,7 @@
   /* Content only reserves the collapsed width, so the expanded sidebar
      overlays it instead of pushing everything around (Chrome/YouTube style) */
   main {
-    margin-left: var(--sidebar-collapsed);
+    margin-right: var(--sidebar-collapsed);
     padding: 32px;
   }
 

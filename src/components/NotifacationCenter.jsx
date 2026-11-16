@@ -165,7 +165,11 @@ const NotifacationCenter = () => {
           </select>
 
           {HAS_ACTIVE_FILTER && (
-            <button type="button" className="filter-clear" onClick={resetFilters}>
+            <button
+              type="button"
+              className="filter-clear"
+              onClick={resetFilters}
+            >
               Clear
             </button>
           )}
@@ -228,16 +232,18 @@ const NotifacationCenter = () => {
                     className="notification-type-container"
                     style={{ color: "var(--priority-color)" }}
                   >
-                    <div className="notification-type">
+                    <b className="notification-type">
                       {ICON && <ICON />} {el.type}
-                    </div>
+                    </b>
+                    |
                     <b className="notification-course-name notification-type">
-                      |<IoIosBookmark />
+                      <IoIosBookmark />
                       {el.courseName}
                     </b>
+                    {el.deadline ? "|" : ""}
                     {el.deadline ? (
                       <b className="notificate-deadline notification-type">
-                        |<BiCalendarCheck /> {DEADLINE}
+                        <BiCalendarCheck /> {DEADLINE}
                       </b>
                     ) : (
                       ""
@@ -259,7 +265,7 @@ const NotifacationCenter = () => {
                   </div>
                   <p className="timestamp">
                     {el?.actor?.name}
-                    {" • "}
+                    {" - "}
                     {TIMESTAMP()}
                   </p>
                 </div>

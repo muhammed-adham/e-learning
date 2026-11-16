@@ -1,0 +1,63 @@
+.navprogress-container {
+  background: var(--surface);
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .navprogress-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 0;
+  }
+  .navprogress-breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    color: var(--text-muted);
+    text-decoration: none;
+    small,
+    svg {
+      font-size: 0.7rem;
+      white-space: nowrap;
+    }
+    &:hover {
+      color: var(--primary);
+    }
+    &:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+  }
+  .navprogress-header {
+    padding-inline-start: 1rem;
+    border-inline-start: 1px solid var(--border);
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    .course-title{
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      padding-bottom: 0.1rem;
+    }
+    .section-number {
+      margin-inline-end: 0.5rem;
+    }
+    h6, h3 {
+      text-transform: capitalize;
+      padding: 0rem;
+    }
+    .course-instructor {
+      font-size: x-small;
+      color: var(--text-muted);
+    }
+  }
+  .navprogress-progress {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+  }
+}

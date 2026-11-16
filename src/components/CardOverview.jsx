@@ -3,6 +3,7 @@ import "../styles/components/cardOverview.css";
 import BtnLink from "./BtnLink";
 import BtnPrimary from "./BtnPrimary";
 import CardCourses from "./CardCourses";
+import ProgressBar from "./ProgressBar";
 
 const CardOverview = () => {
   return (
@@ -17,7 +18,7 @@ const CardOverview = () => {
               <i>Instructed By Muh Adham</i>
             </div>
           </div>
-          <BtnLink label={"view all chapters"} />
+          <BtnLink label={"View all chapters"} />
         </div>
 
         <div className="card-nxtCourse-container">
@@ -26,17 +27,14 @@ const CardOverview = () => {
             <h6>useState hook</h6>
           </div>
           <div className="card-chapter-container">
-            <div className="card-course-progress-container">
-              <div className="card-course-bar">
-                <div className="bar-percentage" style={{ width: "70%" }}></div>
-              </div>
-              <span className="progress-text">6/9 Lessons</span>
-            </div>
-            <BtnPrimary buttonText={"resume lesson"} />
+            <ProgressBar progressWidth={70} />
+            <BtnPrimary
+              buttonText={"resume lesson"}
+              buttonLink={"/coursesview"}
+            />
           </div>
         </div>
       </div>
-
     </>
   );
 };

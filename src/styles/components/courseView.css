@@ -1,0 +1,65 @@
+/* Course view uses the full viewport width so the contents panel can sit on
+   the far left and the lesson stays centered. */
+#root:has(.courseview) {
+  width: 100%;
+  max-width: none;
+  border-inline: none;
+}
+
+.courseview {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  /* room for the fixed main nav on the right */
+  padding-right: var(--sidebar-collapsed);
+}
+
+/* [contents] [lesson, centered] [spacer mirroring contents] */
+.courseview-layout {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 18rem minmax(0, 1fr) 18rem;
+  align-items: stretch;
+}
+.courseview-layout > .courseContents-container {
+  grid-column: 1;
+  grid-row: 1;
+}
+.courseview-layout > .course-player {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+/* Toggle bar + backdrop: only used on small screens (see responsive.css) */
+.courseview-toggle {
+  display: none;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: var(--surface);
+  border-block: 1px solid var(--border);
+
+  button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem;
+    font-size: 1.4rem;
+    color: var(--text);
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    cursor: pointer;
+
+    &:hover {
+      background: var(--hover);
+    }
+    &:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+  }
+}
+.courseview-backdrop {
+  display: none;
+}

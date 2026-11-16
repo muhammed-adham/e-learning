@@ -5,12 +5,18 @@
 
   --bg: #ebebeb;
   --primary: #004e98;
+  /* --primary: #115E59; */
   --accent: #ff9000;
+  /* --tertairy: #115E59; */
   --tertairy: #4338ca;
+
   --overlay: rgba(14, 18, 17, 0.48);
+
   --surface: #fff;
+
   --border: #e2e2dd;
   --border-strong: #8a918e;
+  
   --hover: #f2f2f2;
   --active: #e8f0fe;
   --active-text: #1a73e8;
@@ -21,9 +27,10 @@
   --text-disabled: #a9aeac;
   --text-inverse: #fff;
 
-  --danger: #ef4444;
-  --info: #3b82f6;
-  --warning: #FF6B00;
+  --danger: #991B1B;
+  --info: #1E40AF;
+  --warning: #834B0B;
+  --success: #166534;
 
   /* Typography */
   --font-sans:
@@ -77,6 +84,8 @@
 html {
   font-size: 100%; /* 1rem = 16px (Default browser size) */
   font-family: var(--font-sans);
+  /* Reserve scrollbar space so short pages don't shift the layout sideways */
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -139,6 +148,15 @@ p {
   font-size: 0.85rem;
   line-height: 1.2rem;
 }
+ol{
+  list-style: decimal-leading-zero;
+  list-style-position: inside;
+}
+svg{
+  display: inline-block;
+  /* vertical-align: middle; */
+}
+
 .container-inline {
   padding: 2rem 1rem;
 }
@@ -153,7 +171,7 @@ p {
   content: "";
   position: absolute;
   top: 50%;
-  right: 1rem;
+  right:0rem;
   width: 40%;
   height: 1px;
   background: #000;
@@ -162,7 +180,7 @@ p {
   content: "";
   position: absolute;
   top: 50%;
-  left: 1rem;
+  left: 0rem;
   width: 40%;
   height: 1px;
   background: #000;

@@ -87,6 +87,8 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.4rem;
+    border-inline-end: 1px solid var(--border-strong);
+    padding-inline-end: 1rem;
   }
 
   .filter-chip {

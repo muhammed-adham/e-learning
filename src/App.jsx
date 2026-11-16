@@ -5,6 +5,7 @@ import Dashboard from "./pages/Dashboard";
 import Overview from "./pages/Overview";
 import Enrollment from "./pages/Enrollment";
 import Personalization from "./pages/Personalization";
+import Coursesview from "./pages/Coursesview";
 
 const App = () => {
   const Router = createBrowserRouter([
@@ -28,7 +29,7 @@ const App = () => {
               element: <Personalization />,
             },
           ],
-        },
+        },{path: "coursesview", element: <Coursesview /> }
       ],
     },
   ]);

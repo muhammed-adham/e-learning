@@ -50,7 +50,7 @@
       width: fit-content;
       text-transform: capitalize;
       font-size: 0.6rem;
-      letter-spacing: 0.1rem;
+      letter-spacing: 0.05rem;
       color: var(--text-muted);
       .card-instructor, .card-stdate {
         display: flex;
